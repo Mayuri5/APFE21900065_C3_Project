@@ -70,6 +70,16 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 () -> restaurant.removeFromMenu("Noodles"));
     }
+
+    @Test
+    public void adding_item_to_menu_should_give_correct_order_total(){
+        List<String> items = new ArrayList<String>();
+        items.add("Vegetable lasagne");
+        items.add("French fries");
+        items.add("Sweet corn soup");
+
+        assertEquals(450, restaurant.getOrderTotal(items));
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
